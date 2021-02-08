@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Box Generator</title>
+		<style type="text/css">
+			div{
+				width:100px;
+				height:100px;
+			}
+			.red{
+				background-color:red;
+			}
+			.blue{
+				background-color:blue;
+				
+			}
+			.green{
+				background-color:green;
+				
+			}
+			.orange{
+				background-color:orange;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+        <script>
+        $(document).ready(function(){
+            
+            var colorArr = ['red', 'blue', 'green', 'orange'];
+            var i=0;
+            $("div").each(function(){
+                $(this).hover(function(){
+                    $(this).addClass("blue")
+                }, function(){
+                    $(this).removeClass("blue")
+                })
+                $(this).click(function(){
+                    i++;
+                    if(i>=colorArr.length) {
+                        i =0;
+                    }
+                $('body').append("<div class=" + colorArr[i] + "></div>")
+            })
+            
+            })
+            
+            
+        })
+        </script>
+	</head>
+	<body>
+        
+		<div class="red"></div>
+        
+	</body>
+</html>
